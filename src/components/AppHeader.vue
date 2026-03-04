@@ -17,17 +17,17 @@ const { t, locale, setLocale } = inject('i18n')
         <div class="flex items-center gap-1 border-l border-slate-600 pl-4">
           <button
             type="button"
-            :class="['px-2 py-1 rounded text-xs font-medium transition-colors', locale === 'en' ? 'bg-cyan-500/20 text-cyan-400' : 'text-slate-500 hover:text-slate-300']"
-            @click="setLocale('en')"
-          >
-            EN
-          </button>
-          <button
-            type="button"
             :class="['px-2 py-1 rounded text-xs font-medium transition-colors', locale === 'es' ? 'bg-cyan-500/20 text-cyan-400' : 'text-slate-500 hover:text-slate-300']"
             @click="setLocale('es')"
           >
             ES
+          </button>
+          <button
+            type="button"
+            :class="['px-2 py-1 rounded text-xs font-medium transition-colors', locale === 'en' ? 'bg-cyan-500/20 text-cyan-400' : 'text-slate-500 hover:text-slate-300']"
+            @click="setLocale('en')"
+          >
+            EN
           </button>
         </div>
       </nav>
