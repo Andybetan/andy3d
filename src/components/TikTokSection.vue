@@ -1,4 +1,7 @@
 <script setup>
+import { inject } from 'vue'
+
+const { t } = inject('i18n')
 const tiktokHandle = '@andy.3d48'
 const tiktokUrl = 'https://www.tiktok.com/@andy.3d48'
 </script>
@@ -14,10 +17,10 @@ const tiktokUrl = 'https://www.tiktok.com/@andy.3d48'
         </div>
         <div class="flex-1 text-center sm:text-left">
           <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">
-            Follow on TikTok
+            {{ t('tiktok.title') }}
           </h2>
           <p class="text-slate-400 mb-4">
-            Behind the scenes, new designs and 3D printing tips.
+            {{ t('tiktok.text') }}
           </p>
           <a
             :href="tiktokUrl"
@@ -35,7 +38,7 @@ const tiktokUrl = 'https://www.tiktok.com/@andy.3d48'
           rel="noopener noreferrer"
           class="flex-shrink-0 px-6 py-3 rounded-2xl bg-black text-white font-semibold hover:bg-zinc-800 transition-colors"
         >
-          Follow
+          {{ t('tiktok.follow') }}
         </a>
       </div>
     </div>

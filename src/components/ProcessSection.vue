@@ -1,10 +1,12 @@
 <script setup>
-const steps = [
-  { num: '01', icon: '◇', title: 'Digital design', desc: 'Your idea is modeled in 3D or we adapt an existing design to your taste.' },
-  { num: '02', icon: '▣', title: '3D printing', desc: 'We print layer by layer with quality materials and the right settings.' },
-  { num: '03', icon: '◆', title: 'Finishing and assembly', desc: 'Sanding, priming and painting when needed. Assembly of multi-part pieces.' },
-  { num: '04', icon: '◉', title: 'Delivery', desc: 'Careful packaging and shipping so your piece arrives in perfect condition.' },
-]
+import { inject, computed } from 'vue'
+
+
+const { t, locale } = inject('i18n')
+const steps = computed(() => {
+  locale.value
+  return t('process.steps')
+})
 </script>
 
 <template>
@@ -12,10 +14,10 @@ const steps = [
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14">
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-          The process
+          {{ t('process.title') }}
         </h2>
         <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-          From idea to your hands in four clear steps.
+          {{ t('process.subtitle') }}
         </p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">

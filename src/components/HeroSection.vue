@@ -1,5 +1,8 @@
 <script setup>
+import { inject } from 'vue'
 import AppButton from './AppButton.vue'
+
+const { t } = inject('i18n')
 </script>
 
 <template>
@@ -10,20 +13,20 @@ import AppButton from './AppButton.vue'
         <div class="flex-1 text-center lg:text-left min-w-0">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.1]">
           <span class="bg-gradient-to-r from-white via-slate-200 to-cyan-200 bg-clip-text text-transparent">
-            Unique 3D Printed
+            {{ t('hero.title1') }}
           </span>
           <br />
-          <span class="text-cyan-400">Creations</span>
+          <span class="text-cyan-400">{{ t('hero.title2') }}</span>
         </h1>
         <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-xl mx-auto lg:mx-0">
-          Design, creativity and 3D printing by Andy
+          {{ t('hero.subtitle') }}
         </p>
         <div class="mt-10 flex flex-wrap gap-4 justify-center lg:justify-start">
           <AppButton variant="primary" size="lg" href="#gallery">
-            View creations
+            {{ t('hero.viewCreations') }}
           </AppButton>
           <AppButton variant="outline" size="lg" href="#custom">
-            Request custom figure
+            {{ t('hero.requestFigure') }}
           </AppButton>
         </div>
       </div>

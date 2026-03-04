@@ -1,4 +1,7 @@
 <script setup>
+import { inject } from 'vue'
+
+const { t, locale, setLocale } = inject('i18n')
 </script>
 
 <template>
@@ -8,9 +11,25 @@
         Andy<span class="text-cyan-400">3D</span>
       </a>
       <nav class="flex items-center gap-6 text-sm">
-        <a href="#gallery" class="text-slate-400 hover:text-white transition-colors">Creations</a>
-        <a href="#custom" class="text-slate-400 hover:text-white transition-colors">Custom</a>
-        <a href="#contact" class="text-slate-400 hover:text-white transition-colors">Contact</a>
+        <a href="#gallery" class="text-slate-400 hover:text-white transition-colors">{{ t('nav.creations') }}</a>
+        <a href="#custom" class="text-slate-400 hover:text-white transition-colors">{{ t('nav.custom') }}</a>
+        <a href="#contact" class="text-slate-400 hover:text-white transition-colors">{{ t('nav.contact') }}</a>
+        <div class="flex items-center gap-1 border-l border-slate-600 pl-4">
+          <button
+            type="button"
+            :class="['px-2 py-1 rounded text-xs font-medium transition-colors', locale === 'en' ? 'bg-cyan-500/20 text-cyan-400' : 'text-slate-500 hover:text-slate-300']"
+            @click="setLocale('en')"
+          >
+            EN
+          </button>
+          <button
+            type="button"
+            :class="['px-2 py-1 rounded text-xs font-medium transition-colors', locale === 'es' ? 'bg-cyan-500/20 text-cyan-400' : 'text-slate-500 hover:text-slate-300']"
+            @click="setLocale('es')"
+          >
+            ES
+          </button>
+        </div>
       </nav>
     </div>
   </header>
