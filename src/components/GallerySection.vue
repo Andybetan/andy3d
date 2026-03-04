@@ -27,6 +27,7 @@ const creations = computed(() => {
           :title="item.title"
           :description="item.description"
           :image-alt="item.title"
+          :image="item.image"
         />
       </div>
     </div>

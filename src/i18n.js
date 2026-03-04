@@ -7,12 +7,14 @@ const translations = {
       subtitle: 'Design, creativity and 3D printing by Andy',
       viewCreations: 'View creations',
       requestFigure: 'Request custom figure',
+      cardTitle: 'Mimikyu',
+      cardSubtitle: 'Yellow & black filament · Printed with Anycubic Kobra S1',
     },
     gallery: {
       title: 'Creations',
       subtitle: 'A selection of 3D printed pieces: figures, dioramas and useful objects.',
       items: [
-        { title: 'Mimikyu figure', description: 'Adorable Pokémon figure with fine details and smooth finish. Perfect for collectors.' },
+        { title: 'Mimikyu figure', description: 'Adorable Pokémon figure with fine details and smooth finish. Perfect for collectors.', image: '/mimikyu-hero.png' },
         { title: 'Samurai statue', description: 'Elegant samurai bust with traditional armor details. A striking display piece.' },
         { title: 'Tridix character', description: 'Original character design brought to life in 3D. Custom pose and expression.' },
         { title: 'Diorama scene', description: 'Miniature scene with multiple elements. Ideal for photography and display.' },
@@ -53,13 +55,15 @@ const translations = {
       title2: 'en impresión 3D',
       subtitle: 'Diseño, creatividad e impresión 3D por Andy',
       viewCreations: 'Ver creaciones',
+      cardTitle: 'Mimikyu',
+      cardSubtitle: 'Filamento amarillo y negro · Impreso con Anycubic Kobra S1',
       requestFigure: 'Solicitar figura personalizada',
     },
     gallery: {
       title: 'Creaciones',
       subtitle: 'Una selección de piezas impresas en 3D: figuras, dioramas y objetos útiles.',
       items: [
-        { title: 'Figura Mimikyu', description: 'Figura de Pokémon con detalles finos y acabado suave. Ideal para coleccionistas.' },
+        { title: 'Figura Mimikyu', description: 'Figura de Pokémon con detalles finos y acabado suave. Ideal para coleccionistas.', image: '/mimikyu-hero.png' },
         { title: 'Estatua samurái', description: 'Busto de samurái con detalles de armadura tradicional. Pieza impactante.' },
         { title: 'Personaje Tridix', description: 'Diseño de personaje original llevado al 3D. Pose y expresión a medida.' },
         { title: 'Escena diorama', description: 'Escena miniatura con varios elementos. Ideal para fotografía y exposición.' },
