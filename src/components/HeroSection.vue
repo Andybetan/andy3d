@@ -39,7 +39,7 @@ const { t } = inject('i18n')
               alt="Mimikyu 3D"
               class="absolute inset-0 w-full h-full object-cover rounded-3xl"
             />
-            <div class="absolute bottom-4 left-4 right-4 rounded-xl bg-surface-900/80 backdrop-blur-sm border border-slate-600/30 px-4 py-3 flex flex-col items-center justify-center text-center min-h-[5.5rem]">
+            <div class="absolute bottom-4 left-4 right-4 rounded-xl bg-surface-900/80 backdrop-blur-sm border border-slate-600/30 px-4 py-3 flex flex-col items-center justify-center text-center min-h-22">
               <p class="text-lg font-semibold text-slate-100">{{ t('hero.cardTitle') }}</p>
               <p class="text-sm text-slate-400 mt-1">{{ t('hero.cardSubtitle') }}</p>
             </div>
