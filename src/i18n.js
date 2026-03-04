@@ -15,8 +15,8 @@ const translations = {
       subtitle: 'A selection of 3D printed pieces: figures, dioramas and useful objects.',
       items: [
         { title: 'Mimikyu figure', description: 'Adorable Pokémon figure with fine details and smooth finish. Perfect for collectors.', image: '/mimikyu-hero.png' },
-        { title: 'Samurai statue', description: 'Elegant samurai bust with traditional armor details. A striking display piece.' },
-        { title: 'Tridix character', description: 'Original character design brought to life in 3D. Custom pose and expression.' },
+        { title: 'Samurai statue', description: 'Elegant samurai bust with traditional armor details. A striking display piece.', image: '/samurai-hero.png' },
+        { title: 'Tridix character', description: 'Original character design brought to life in 3D. Custom pose and expression.', image: '/tridix-hero.png' },
         { title: 'Diorama scene', description: 'Miniature scene with multiple elements. Ideal for photography and display.' },
         { title: 'Oreo clicker', description: 'Functional fidget toy inspired by the classic cookie. Satisfying click mechanism.' },
         { title: 'Headphone stand', description: 'Sleek desk accessory to keep your headphones safe and within reach.' },
@@ -64,8 +64,8 @@ const translations = {
       subtitle: 'Una selección de piezas impresas en 3D: figuras, dioramas y objetos útiles.',
       items: [
         { title: 'Figura Mimikyu', description: 'Figura de Pokémon con detalles finos y acabado suave. Ideal para coleccionistas.', image: '/mimikyu-hero.png' },
-        { title: 'Estatua samurái', description: 'Busto de samurái con detalles de armadura tradicional. Pieza impactante.' },
-        { title: 'Personaje Tridix', description: 'Diseño de personaje original llevado al 3D. Pose y expresión a medida.' },
+        { title: 'Estatua samurái', description: 'Busto de samurái con detalles de armadura tradicional. Pieza impactante.', image: '/samurai-hero.png' },
+        { title: 'Personaje Tridix', description: 'Diseño de personaje original llevado al 3D. Pose y expresión a medida.', image: '/tridix-hero.png' },
         { title: 'Escena diorama', description: 'Escena miniatura con varios elementos. Ideal para fotografía y exposición.' },
         { title: 'Oreo clicker', description: 'Fidget toy funcional inspirado en la galleta. Mecanismo de clic satisfactorio.' },
         { title: 'Soporte para auriculares', description: 'Accesorio de escritorio para tener los auriculares ordenados y a mano.' },
