@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Fuentes */
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+
+  /* Colores surface (fondo oscuro) */
+  --color-surface-900: #0f0f14;
+  --color-surface-800: #16161d;
+  --color-surface-700: #1c1c26;
+  --color-surface-600: #252532;
+  --color-surface-500: #2a2a3a;
+
+  /* Animación float para el hero */
+  --animate-float: float 6s ease-in-out infinite;
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply antialiased text-slate-100 font-sans;
+    background-color: var(--color-surface-900);
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+  }
+  .hero-gradient {
+    background: linear-gradient(135deg, #0f0f14 0%, #1a1a24 50%, #0f172a 100%);
+  }
+}
