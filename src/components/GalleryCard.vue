@@ -4,12 +4,16 @@ defineProps({
   description: { type: String, required: true },
   imageAlt: { type: String, default: '' },
   image: { type: String, default: '' },
+  clickable: { type: Boolean, default: false },
 })
 </script>
 
 <template>
   <article
-    class="group relative overflow-hidden rounded-3xl bg-surface-700/60 border border-slate-600/40 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:border-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/10"
+    :class="[
+      'group relative overflow-hidden rounded-3xl bg-surface-700/60 border border-slate-600/40 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:border-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/10',
+      clickable && 'cursor-pointer'
+    ]"
   >
     <div class="aspect-4/3 bg-linear-to-br from-surface-600 to-surface-800 flex items-center justify-center overflow-hidden">
       <img
