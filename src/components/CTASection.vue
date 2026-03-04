@@ -6,7 +6,7 @@ const { t } = inject('i18n')
 </script>
 
 <template>
-  <section id="contact" class="section-padding bg-gradient-to-b from-surface-800 to-surface-900">
+  <section id="contact" class="section-padding bg-linear-to-b from-surface-800 to-surface-900">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
         {{ t('cta.title') }}

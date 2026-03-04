@@ -12,7 +12,7 @@ const { t } = inject('i18n')
       <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div class="flex-1 text-center lg:text-left min-w-0">
         <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.1]">
-          <span class="bg-gradient-to-r from-white via-slate-200 to-cyan-200 bg-clip-text text-transparent">
+          <span class="bg-linear-to-r from-white via-slate-200 to-cyan-200 bg-clip-text text-transparent">
             {{ t('hero.title1') }}
           </span>
           <br />
@@ -32,7 +32,7 @@ const { t } = inject('i18n')
       </div>
       <div class="flex-1 w-full max-w-xl lg:max-w-none flex justify-center min-w-0">
         <div
-            class="relative w-full aspect-square max-w-md rounded-3xl bg-gradient-to-br from-surface-700 to-surface-800 border border-slate-600/50 flex items-center justify-center overflow-hidden animate-float shadow-2xl shadow-cyan-500/10"
+            class="relative w-full aspect-square max-w-md rounded-3xl bg-linear-to-br from-surface-700 to-surface-800 border border-slate-600/50 flex items-center justify-center overflow-hidden animate-float shadow-2xl shadow-cyan-500/10"
           >
             <div class="absolute inset-4 rounded-2xl bg-surface-600/50 flex items-center justify-center">
               <span class="text-8xl sm:text-9xl text-cyan-500/20 select-none">3D</span>

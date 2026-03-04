@@ -10,9 +10,9 @@ const tiktokUrl = 'https://www.tiktok.com/@andy.3d48'
   <section class="section-padding bg-surface-900">
     <div class="max-w-4xl mx-auto">
       <div
-        class="rounded-3xl bg-gradient-to-br from-surface-700 to-surface-800 border border-slate-600/40 p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8 transition-all duration-300 hover:border-pink-500/30 hover:shadow-xl hover:shadow-pink-500/5"
+        class="rounded-3xl bg-linear-to-br from-surface-700 to-surface-800 border border-slate-600/40 p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8 transition-all duration-300 hover:border-pink-500/30 hover:shadow-xl hover:shadow-pink-500/5"
       >
-        <div class="flex-shrink-0 w-20 h-20 rounded-2xl bg-black flex items-center justify-center text-3xl">
+        <div class="shrink-0 w-20 h-20 rounded-2xl bg-black flex items-center justify-center text-3xl">
           🎵
         </div>
         <div class="flex-1 text-center sm:text-left">
@@ -36,7 +36,7 @@ const tiktokUrl = 'https://www.tiktok.com/@andy.3d48'
           :href="tiktokUrl"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex-shrink-0 px-6 py-3 rounded-2xl bg-black text-white font-semibold hover:bg-zinc-800 transition-colors"
+          class="shrink-0 px-6 py-3 rounded-2xl bg-black text-white font-semibold hover:bg-zinc-800 transition-colors"
         >
           {{ t('tiktok.follow') }}
         </a>

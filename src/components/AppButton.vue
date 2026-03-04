@@ -23,7 +23,7 @@ defineProps({
       'inline-flex items-center justify-center font-semibold rounded-2xl transition-all duration-300 ease-out',
       'hover:scale-[1.02] active:scale-[0.98]',
       {
-        'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40': variant === 'primary',
+        'bg-linear-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40': variant === 'primary',
         'bg-surface-600/80 text-slate-100 border border-slate-500/50 hover:border-cyan-400/50 hover:bg-surface-500/80': variant === 'secondary',
         'bg-transparent text-cyan-400 border-2 border-cyan-400/60 hover:bg-cyan-400/10 hover:border-cyan-400': variant === 'outline',
       },
