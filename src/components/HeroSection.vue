@@ -40,8 +40,26 @@ const { t } = inject('i18n')
               class="absolute inset-0 w-full h-full object-cover rounded-3xl"
             />
             <div class="absolute bottom-4 left-4 right-4 rounded-xl bg-surface-900/80 backdrop-blur-sm border border-slate-600/30 px-4 py-3 flex flex-col items-center justify-center text-center min-h-22">
-              <p class="text-lg font-semibold text-slate-100">{{ t('hero.cardTitle') }}</p>
-              <p class="text-sm text-slate-400 mt-1">{{ t('hero.cardSubtitle') }}</p>
+              <p class="text-lg font-semibold text-slate-100">
+                {{ t('hero.cardTitle') }}
+              </p>
+              <p class="text-sm text-slate-400 mt-1">
+                {{ t('hero.cardSubtitle') }}
+              </p>
+              <div class="mt-2 space-y-1 text-[11px] sm:text-xs text-slate-400 text-center">
+                <div>
+                  <span class="font-semibold text-slate-300 tracking-[0.12em] uppercase mr-1">Filamento</span>
+                  <span class="font-mono text-slate-200">PDGE amarillo · PEDGE negro</span>
+                </div>
+                <div>
+                  <span class="font-semibold text-slate-300 tracking-[0.12em] uppercase mr-1">Cuerpo</span>
+                  <span class="font-mono text-slate-200">2:56:54 min</span>
+                </div>
+                <div>
+                  <span class="font-semibold text-slate-300 tracking-[0.12em] uppercase mr-1">Base y cola</span>
+                  <span class="font-mono text-slate-200">1:13:51 min</span>
+                </div>
+              </div>
             </div>
           </div>
       </div>
