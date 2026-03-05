@@ -19,6 +19,7 @@ const t = (key) => translate(locale.value, key)
 provide('i18n', { locale, t, setLocale })
 
 const cookiesAccepted = ref(false)
+const cookiesDismissed = ref(false)
 const COOKIE_KEY = 'andy3d-cookies-accepted'
 
 const legalModal = ref(null) // 'cookies' | 'legal' | 'privacy' | null
@@ -36,6 +37,11 @@ function acceptCookies() {
   try {
     localStorage.setItem(COOKIE_KEY, 'true')
   } catch (_) {}
+}
+
+function rejectCookies() {
+  // Solo ocultamos el banner en esta sesión, sin guardar consentimiento
+  cookiesDismissed.value = true
 }
 
 function openLegal(type) {
@@ -98,7 +104,7 @@ function closeLegal() {
 
     <Transition name="cookie">
       <div
-        v-if="!cookiesAccepted"
+        v-if="!cookiesAccepted && !cookiesDismissed"
         class="fixed inset-x-0 bottom-0 z-40"
       >
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
@@ -106,7 +112,7 @@ function closeLegal() {
             class="rounded-2xl bg-surface-800/95 border border-slate-600/60 shadow-xl backdrop-blur-sm px-4 py-3 sm:px-5 sm:py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
           >
             <p class="text-xs sm:text-sm text-slate-200">
-              Usamos cookies propias y de terceros para mejorar tu experiencia y analizar el uso de la web. Puedes aceptar para continuar navegando.
+              Usamos cookies propias y de terceros para mejorar tu experiencia y analizar el uso de la web. Puedes aceptar todas las cookies o continuar solo con las necesarias.
             </p>
             <div class="flex items-center gap-3 self-end sm:self-auto">
               <button
@@ -118,10 +124,17 @@ function closeLegal() {
               </button>
               <button
                 type="button"
+                class="px-4 py-2 rounded-xl border border-slate-500/70 text-slate-100 text-xs sm:text-sm font-semibold hover:bg-surface-700/80 transition-colors"
+                @click="rejectCookies"
+              >
+                Solo necesarias
+              </button>
+              <button
+                type="button"
                 class="px-4 py-2 rounded-xl bg-linear-to-r from-cyan-500 to-blue-600 text-white text-xs sm:text-sm font-semibold shadow-md shadow-cyan-500/30 hover:opacity-90 transition-opacity"
                 @click="acceptCookies"
               >
-                Aceptar
+                Aceptar todas
               </button>
             </div>
           </div>
