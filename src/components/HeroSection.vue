@@ -32,14 +32,14 @@ const { t } = inject('i18n')
       </div>
       <div class="flex-1 w-full max-w-xl lg:max-w-none flex justify-center min-w-0">
         <div
-            class="relative w-full aspect-square max-w-md rounded-3xl bg-linear-to-br from-surface-700 to-surface-800 border border-slate-600/50 flex items-center justify-center overflow-hidden animate-float shadow-2xl shadow-cyan-500/10"
+            class="group relative w-full aspect-square max-w-md rounded-3xl bg-linear-to-br from-surface-700 to-surface-800 border border-slate-600/50 flex items-center justify-center overflow-hidden animate-float shadow-2xl shadow-cyan-500/10"
           >
             <img
               src="/mimikyu-hero.png"
               alt="Mimikyu 3D"
               class="absolute inset-0 w-full h-full object-cover rounded-3xl"
             />
-            <div class="absolute bottom-4 left-4 right-4 rounded-xl bg-surface-900/80 backdrop-blur-sm border border-slate-600/30 px-4 py-3 flex flex-col items-center justify-center text-center min-h-22">
+            <div class="absolute bottom-4 left-4 right-4 rounded-xl bg-surface-900/80 backdrop-blur-sm border border-slate-600/30 px-4 py-3 flex flex-col items-center justify-center text-center min-h-22 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               <p class="text-lg font-semibold text-slate-100">
                 {{ t('hero.cardTitle') }}
               </p>
