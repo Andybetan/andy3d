@@ -59,6 +59,10 @@ const translations = {
       messagePlaceholder: 'Tell me your idea or request...',
       success: 'Message sent. We\'ll get back to you soon!',
     },
+    avatar: {
+      label: 'Andy3D avatar',
+      bubble: 'Hi! I\'m Andy3D and I\'ll bring your ideas to life in 3D.',
+    },
   },
   es: {
     nav: { creations: 'Creaciones', custom: 'Personalizado', contact: 'Contacto' },
@@ -119,6 +123,10 @@ const translations = {
       emailPlaceholder: 'tu@correo.com',
       messagePlaceholder: 'Cuéntame tu idea o solicitud...',
       success: 'Mensaje enviado. Te responderé pronto.',
+    },
+    avatar: {
+      label: 'Avatar de Andy3D',
+      bubble: '¡Hola! Soy Andy3D y te ayudaré a dar vida a tus ideas en 3D.',
     },
   },
 }

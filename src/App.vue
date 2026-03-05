@@ -8,6 +8,7 @@ import ProcessSection from './components/ProcessSection.vue'
 import CustomOrderSection from './components/CustomOrderSection.vue'
 import TikTokSection from './components/TikTokSection.vue'
 import CTASection from './components/CTASection.vue'
+import VideoAvatar from './components/VideoAvatar.vue'
 
 const locale = ref(getStoredLocale())
 const setLocale = (l) => {
@@ -57,6 +58,8 @@ function closeLegal() {
       <TikTokSection />
       <CTASection />
     </main>
+
+    <VideoAvatar />
 
     <footer class="mt-8 border-t border-slate-700/60 bg-surface-900">
       <div
