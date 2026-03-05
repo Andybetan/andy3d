@@ -12,8 +12,12 @@ const tiktokUrl = 'https://www.tiktok.com/@andy.3d48'
       <div
         class="rounded-3xl bg-linear-to-br from-surface-700 to-surface-800 border border-slate-600/40 p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8 transition-all duration-300 hover:border-pink-500/30 hover:shadow-xl hover:shadow-pink-500/5"
       >
-        <div class="shrink-0 w-20 h-20 rounded-2xl bg-black flex items-center justify-center text-3xl">
-          🎵
+        <div class="shrink-0 w-20 h-20 rounded-2xl bg-black flex items-center justify-center overflow-hidden">
+          <img
+            src="/tiktok-avatar.png"
+            alt="Avatar TikTok Andy3D"
+            class="w-full h-full object-contain"
+          />
         </div>
         <div class="flex-1 text-center sm:text-left">
           <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">
