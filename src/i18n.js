@@ -61,7 +61,9 @@ const translations = {
     },
     avatar: {
       label: 'Andy3D avatar',
+      welcome: 'Welcome!',
       bubble: 'Hi! I\'m Andy3D and I\'ll bring your ideas to life in 3D.',
+      bubbleSuccess: 'Your message has been sent successfully to info@andy3d.es. Thank you!',
     },
   },
   es: {
@@ -126,7 +128,9 @@ const translations = {
     },
     avatar: {
       label: 'Avatar de Andy3D',
+      welcome: 'Bienvenid@/s!',
       bubble: '¡Hola! Soy Andy3D y te ayudaré a dar vida a tus ideas en 3D.',
+      bubbleSuccess: 'Tu mensaje se ha enviado correctamente a info@andy3d.es. ¡Gracias!',
     },
   },
 }

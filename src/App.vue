@@ -18,6 +18,9 @@ const setLocale = (l) => {
 const t = (key) => translate(locale.value, key)
 provide('i18n', { locale, t, setLocale })
 
+const avatarSuccessMessage = ref(null)
+provide('avatarSuccessMessage', avatarSuccessMessage)
+
 const cookiesAccepted = ref(false)
 const cookiesDismissed = ref(false)
 const COOKIE_KEY = 'andy3d-cookies-accepted'
@@ -210,7 +213,7 @@ function closeLegal() {
                 </p>
                 <p>
                   Para cualquier consulta relacionada con este aviso legal, puedes escribir a
-                  <span class="font-mono text-slate-100">contacto@andy3d.com</span>.
+                  <span class="font-mono text-slate-100">info@andy3d.es</span>.
                 </p>
               </section>
 
@@ -228,7 +231,7 @@ function closeLegal() {
                 <p>
                   Tienes derecho a acceder, rectificar y suprimir tus datos, así como otros derechos reconocidos por la
                   normativa de protección de datos. Para ejercerlos puedes escribir a
-                  <span class="font-mono text-slate-100">contacto@andy3d.com</span>.
+                  <span class="font-mono text-slate-100">info@andy3d.es</span>.
                 </p>
                 <p>
                   Esta política se revisa periódicamente para mantenerla actualizada conforme a la normativa aplicable.

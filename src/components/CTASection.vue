@@ -3,6 +3,7 @@ import { ref, inject } from 'vue'
 import AppButton from './AppButton.vue'
 
 const { t } = inject('i18n')
+const avatarSuccessMessage = inject('avatarSuccessMessage')
 const showContactForm = ref(false)
 const formSent = ref(false)
 const form = ref({ name: '', email: '', message: '' })
@@ -20,9 +21,13 @@ function closeForm() {
 function onSubmit(e) {
   e.preventDefault()
   formSent.value = true
+  if (avatarSuccessMessage) avatarSuccessMessage.value = t('avatar.bubbleSuccess')
   setTimeout(() => {
     closeForm()
   }, 2000)
+  setTimeout(() => {
+    if (avatarSuccessMessage) avatarSuccessMessage.value = null
+  }, 6000)
 }
 </script>
 
