@@ -72,7 +72,7 @@ function closeLegal() {
         class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-xs sm:text-sm text-slate-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
       >
         <p>
-          © 2026 Andres Beltran Betancourt. Todos los derechos reservados.
+          © 2026 Andrés Beltrán Betancourt. Todos los derechos reservados.
         </p>
         <nav class="flex flex-wrap items-center gap-3 text-slate-400">
           <button
