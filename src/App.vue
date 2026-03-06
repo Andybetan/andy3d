@@ -72,12 +72,12 @@ function closeLegal() {
 
     <footer class="mt-8 border-t border-slate-700/60 bg-surface-900">
       <div
-        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-xs sm:text-sm text-slate-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-xs sm:text-sm text-slate-500 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-center sm:text-left"
       >
         <p>
           © 2026 Andrés Beltrán Betancourt. Todos los derechos reservados.
         </p>
-        <nav class="flex flex-wrap items-center gap-3 text-slate-400">
+        <nav class="flex flex-wrap items-center gap-3 text-slate-400 justify-center sm:justify-end">
           <button
             type="button"
             class="hover:text-slate-200 transition-colors underline-offset-4 hover:underline"
