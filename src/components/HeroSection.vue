@@ -30,7 +30,7 @@ const { t } = inject('i18n')
           </AppButton>
         </div>
       </div>
-      <div class="flex-1 w-full max-w-xl lg:max-w-none flex justify-center min-w-0">
+      <div class="hidden lg:flex flex-1 w-full max-w-xl lg:max-w-none justify-center min-w-0">
         <div
             class="group relative w-full aspect-square max-w-md rounded-3xl bg-linear-to-br from-surface-700 to-surface-800 border border-slate-600/50 flex items-center justify-center overflow-hidden animate-float shadow-2xl shadow-cyan-500/10"
           >

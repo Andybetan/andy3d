@@ -84,7 +84,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="fixed z-40 right-4 bottom-24 sm:right-8 sm:bottom-10 pointer-events-none select-none transition-opacity duration-300 ease-out"
+    class="fixed z-50 right-4 bottom-32 sm:right-8 sm:bottom-10 pointer-events-none select-none transition-opacity duration-300 ease-out"
     :style="{ opacity: avatarOpacity }"
   >
     <div
