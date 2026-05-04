@@ -1,10 +1,25 @@
 <script setup>
-import { inject, onMounted, onUnmounted, ref } from 'vue'
+import { computed, inject, onMounted, onUnmounted, ref, watch } from 'vue'
 import AppButton from './AppButton.vue'
 
 const { t } = inject('i18n')
 
 const printDetailOpen = ref(false)
+
+/** Cartas TCG: hover (pointer) o toque en móvil abren el abanico */
+const tcgFanHover = ref(false)
+const tcgFanTap = ref(false)
+const tcgFanOpen = computed(() => tcgFanHover.value || tcgFanTap.value)
+
+/** Carta trasera (Fezandipiti) al frente al pulsarla */
+const tcgBackOnTop = ref(false)
+
+watch(printDetailOpen, (open) => {
+  if (open) {
+    tcgFanTap.value = false
+    tcgBackOnTop.value = false
+  }
+})
 
 function openPrintDetail() {
   printDetailOpen.value = true
@@ -14,8 +29,42 @@ function closePrintDetail() {
   printDetailOpen.value = false
 }
 
+function isLargeViewport() {
+  return typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches
+}
+
+function onTcgFanEnter() {
+  tcgFanHover.value = true
+}
+
+function onTcgFanLeave() {
+  tcgFanHover.value = false
+}
+
+/** Solo móvil/tablet: clic alterna abanico (en lg el hover basta) */
+function onTcgDeckPointerToggle() {
+  if (isLargeViewport()) return
+  tcgFanTap.value = !tcgFanTap.value
+}
+
+function onTcgBackCardActivate(ev) {
+  ev?.stopPropagation?.()
+  tcgBackOnTop.value = true
+}
+
+function onTcgFrontCardActivate(ev) {
+  ev?.stopPropagation?.()
+  tcgBackOnTop.value = false
+}
+
 function onKeydown(e) {
-  if (e.key === 'Escape') closePrintDetail()
+  if (e.key !== 'Escape') return
+  if (printDetailOpen.value) {
+    closePrintDetail()
+    return
+  }
+  tcgFanTap.value = false
+  tcgBackOnTop.value = false
 }
 
 onMounted(() => window.addEventListener('keydown', onKeydown))
@@ -136,24 +185,55 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
               <Transition name="hero-tcg">
                 <div v-show="!printDetailOpen" class="flex flex-col">
                   <div
-                    class="relative w-full flex justify-center items-end min-h-[10rem] sm:min-h-[11rem] pb-7 pt-2"
+                    class="relative w-full flex justify-center items-end min-h-[10rem] sm:min-h-[11rem] pb-7 pt-2 rounded-2xl outline-none touch-manipulation lg:cursor-default"
+                    role="group"
+                    :aria-label="t('hero.tcgFanAria')"
+                    @mouseenter="onTcgFanEnter"
+                    @mouseleave="onTcgFanLeave"
+                    @click.self="onTcgDeckPointerToggle"
                   >
                     <div
-                      class="absolute bottom-6 sm:bottom-7 left-[6%] sm:left-[10%] w-[40%] max-w-[5.25rem] rounded-lg overflow-hidden border border-amber-400/45 shadow-lg shadow-black/45 rotate-[11deg] bg-surface-950 origin-bottom-left z-0"
+                      role="button"
+                      tabindex="0"
+                      :class="[
+                        'absolute bottom-6 sm:bottom-7 left-[6%] sm:left-[10%] w-[40%] max-w-[5.25rem] rounded-lg overflow-hidden border border-amber-400/45 shadow-lg shadow-black/45 bg-surface-950 origin-bottom-left transition-all duration-300 ease-out will-change-transform cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-amber-400/55 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-900',
+                        tcgBackOnTop
+                          ? 'z-[38] translate-x-3 sm:translate-x-4 rotate-[6deg] shadow-2xl ring-2 ring-amber-400/45 scale-[1.03]'
+                          : tcgFanOpen
+                            ? '-translate-x-2 sm:-translate-x-3 rotate-[4deg] z-[15] ring-1 ring-amber-400/35'
+                            : 'translate-x-0 rotate-[11deg] z-0',
+                      ]"
+                      :aria-label="t('hero.tcgFlipBackAria')"
+                      @click.stop="onTcgBackCardActivate"
+                      @keydown.enter.prevent.stop="onTcgBackCardActivate"
+                      @keydown.space.prevent.stop="onTcgBackCardActivate"
                     >
                       <img
                         src="/cardmarket/fezandipiti-ex-sir.png"
                         :alt="t('hero.collageCardAlt2')"
-                        class="w-full aspect-[63/88] object-cover"
+                        class="w-full aspect-[63/88] object-cover pointer-events-none select-none"
                       />
                     </div>
                     <div
-                      class="relative z-10 translate-y-1 w-[46%] max-w-[6rem] sm:max-w-[6.5rem] rounded-xl overflow-hidden border-2 border-amber-400/45 shadow-xl shadow-black/45 -rotate-[8deg] bg-surface-950"
+                      role="button"
+                      tabindex="0"
+                      :class="[
+                        'relative w-[46%] max-w-[6rem] sm:max-w-[6.5rem] rounded-xl overflow-hidden border-2 border-amber-400/45 shadow-xl shadow-black/45 bg-surface-950 transition-all duration-300 ease-out will-change-transform cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/45 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-900',
+                        tcgBackOnTop
+                          ? 'z-[14] translate-y-2 sm:translate-y-3 -rotate-[11deg] opacity-[0.88] scale-[0.94]'
+                          : tcgFanOpen
+                            ? 'z-[16] translate-x-3 sm:translate-x-4 translate-y-0 -rotate-[14deg] ring-1 ring-cyan-400/25 opacity-100 scale-100'
+                            : 'z-10 translate-y-1 -rotate-[8deg] opacity-100',
+                      ]"
+                      :aria-label="t('hero.tcgFlipFrontAria')"
+                      @click.stop="onTcgFrontCardActivate"
+                      @keydown.enter.prevent.stop="onTcgFrontCardActivate"
+                      @keydown.space.prevent.stop="onTcgFrontCardActivate"
                     >
                       <img
                         src="/cardmarket/piplup-098-094.png"
                         :alt="t('hero.collageCardAlt')"
-                        class="w-full aspect-[63/88] object-cover"
+                        class="w-full aspect-[63/88] object-cover pointer-events-none select-none"
                       />
                     </div>
                   </div>
@@ -243,25 +323,56 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
             <Transition name="hero-tcg">
               <div
                 v-show="!printDetailOpen"
-                class="absolute z-10 w-[min(42%,9.75rem)] translate-y-5 xl:translate-y-6 -bottom-1 right-2 xl:right-4 origin-bottom-right scale-[0.88] xl:scale-[0.9] drop-shadow-2xl pointer-events-none"
+                class="absolute z-10 w-[min(42%,9.75rem)] translate-y-5 xl:translate-y-6 -bottom-1 right-2 xl:right-4 origin-bottom-right scale-[0.88] xl:scale-[0.9] drop-shadow-2xl touch-manipulation rounded-xl outline-none"
+                role="group"
+                :aria-label="t('hero.tcgFanAria')"
+                @mouseenter="onTcgFanEnter"
+                @mouseleave="onTcgFanLeave"
+                @click.self="onTcgDeckPointerToggle"
               >
                 <div class="relative pb-2">
                   <div
-                    class="absolute bottom-1 left-0 xl:-left-1 w-[82%] max-w-[11rem] rounded-lg overflow-hidden border-2 border-amber-400/55 bg-surface-950 rotate-[15deg] shadow-xl shadow-black/55 origin-bottom-left z-0"
+                    role="button"
+                    tabindex="0"
+                    :class="[
+                      'absolute bottom-1 left-0 xl:-left-1 w-[82%] max-w-[11rem] rounded-lg overflow-hidden border-2 border-amber-400/55 bg-surface-950 shadow-xl shadow-black/55 origin-bottom-left transition-all duration-300 ease-out will-change-transform cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-amber-400/55 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-900',
+                      tcgBackOnTop
+                        ? 'z-[42] translate-x-2 xl:translate-x-3 rotate-[18deg] shadow-2xl ring-2 ring-amber-400/50 scale-[1.03]'
+                        : tcgFanOpen
+                          ? '-translate-x-3 xl:-translate-x-4 rotate-[22deg] z-[18] ring-1 ring-amber-400/40'
+                          : 'translate-x-0 rotate-[15deg] z-0',
+                    ]"
+                    :aria-label="t('hero.tcgFlipBackAria')"
+                    @click.stop="onTcgBackCardActivate"
+                    @keydown.enter.prevent.stop="onTcgBackCardActivate"
+                    @keydown.space.prevent.stop="onTcgBackCardActivate"
                   >
                     <img
                       src="/cardmarket/fezandipiti-ex-sir.png"
                       :alt="t('hero.collageCardAlt2')"
-                      class="w-full aspect-[63/88] object-cover"
+                      class="w-full aspect-[63/88] object-cover pointer-events-none select-none"
                     />
                   </div>
                   <div
-                    class="relative ml-auto w-[88%] rounded-lg overflow-hidden border-2 border-amber-400/50 bg-surface-950 -rotate-11 shadow-xl shadow-black/50 translate-y-1 z-10"
+                    role="button"
+                    tabindex="0"
+                    :class="[
+                      'relative ml-auto w-[88%] rounded-lg overflow-hidden border-2 border-amber-400/50 bg-surface-950 shadow-xl shadow-black/50 transition-all duration-300 ease-out will-change-transform cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/45 focus-visible:ring-offset-2 focus-visible:ring-offset-surface-900',
+                      tcgBackOnTop
+                        ? 'z-[14] translate-y-2 xl:translate-y-3 -rotate-[14deg] opacity-[0.88] scale-[0.94]'
+                        : tcgFanOpen
+                          ? 'z-[19] translate-x-4 xl:translate-x-5 translate-y-0 -rotate-[17deg] ring-1 ring-cyan-400/25 opacity-100 scale-100'
+                          : 'z-10 translate-y-1 -rotate-11 opacity-100',
+                    ]"
+                    :aria-label="t('hero.tcgFlipFrontAria')"
+                    @click.stop="onTcgFrontCardActivate"
+                    @keydown.enter.prevent.stop="onTcgFrontCardActivate"
+                    @keydown.space.prevent.stop="onTcgFrontCardActivate"
                   >
                     <img
                       src="/cardmarket/piplup-098-094.png"
                       :alt="t('hero.collageCardAlt')"
-                      class="w-full aspect-[63/88] object-cover"
+                      class="w-full aspect-[63/88] object-cover pointer-events-none select-none"
                     />
                   </div>
                 </div>
