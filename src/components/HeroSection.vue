@@ -89,7 +89,12 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
             <span class="text-cyan-400">{{ t('hero.title2') }}</span>
           </h1>
           <p class="mt-6 text-base sm:text-xl text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-            {{ t('hero.subtitle') }}
+            {{ t('hero.subtitleLead') }}
+            <span
+              class="font-semibold text-transparent bg-clip-text bg-linear-to-r from-amber-200/95 via-amber-100 to-cyan-300/90 drop-shadow-[0_0_20px_rgba(251,191,36,0.08)]"
+            >
+              {{ t('hero.subtitleTcg') }}
+            </span>
           </p>
           <div class="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
             <AppButton variant="primary" size="md" href="#coleccion">

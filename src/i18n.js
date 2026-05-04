@@ -9,8 +9,9 @@ const translations = {
     hero: {
       title1: 'Unique 3D Printed',
       title2: 'Creations',
-      subtitle:
-        'One workshop for collectors: zoom printed figures here, jump straight to Pokémon singles & sealed on Cardmarket.',
+      subtitleLead:
+        'One workshop for collectors: zoom printed figures here, jump straight to ',
+      subtitleTcg: 'Pokémon singles & sealed on Cardmarket.',
       ctaShowcase: 'Open the showcase',
       requestFigure: 'Commission a custom print',
       archiveLink: 'See the full 3D gallery →',
@@ -171,8 +172,9 @@ const translations = {
     hero: {
       title1: 'Creaciones únicas',
       title2: 'en impresión 3D',
-      subtitle:
-        'El mismo taller para coleccionistas: amplía las figuras aquí y salta a cartas Pokémon sueltas o sellado en Cardmarket.',
+      subtitleLead:
+        'El mismo taller para coleccionistas: amplía las figuras aquí y salta a ',
+      subtitleTcg: 'cartas Pokémon sueltas o sellado en Cardmarket.',
       ctaShowcase: 'Abrir vitrina interactiva',
       cardTitle: 'Mimikyu',
       cardSubtitle: 'Filamento amarillo y negro · Impreso con Anycubic Kobra S1',
