@@ -115,7 +115,7 @@ function tabBtnClass(active) {
 <template>
   <section id="coleccion" class="section-padding scroll-mt-20 relative overflow-hidden">
     <div
-      class="pointer-events-none absolute inset-0 bg-linear-to-br from-cyan-500/[0.06] via-transparent to-amber-500/[0.07]"
+      class="pointer-events-none absolute inset-0 bg-linear-to-br from-cyan-500/6 via-transparent to-amber-500/7"
       aria-hidden="true"
     />
     <div
@@ -187,11 +187,11 @@ function tabBtnClass(active) {
         class="hidden sm:flex items-center justify-center gap-3 mb-10 text-xs text-slate-500 font-medium uppercase tracking-widest"
         aria-hidden="true"
       >
-        <span class="h-px flex-1 max-w-[6rem] bg-linear-to-r from-transparent to-cyan-500/35" />
+        <span class="h-px flex-1 max-w-24 bg-linear-to-r from-transparent to-cyan-500/35" />
         <span class="text-cyan-500/80 font-black">◆</span>
         <span>{{ t('fusion.bridge') }}</span>
         <span class="text-amber-400/80 font-black">★</span>
-        <span class="h-px flex-1 max-w-[6rem] bg-linear-to-l from-transparent to-amber-500/35" />
+        <span class="h-px flex-1 max-w-24 bg-linear-to-l from-transparent to-amber-500/35" />
       </div>
 
       <Transition name="fusion-grid" mode="out-in">
@@ -204,7 +204,7 @@ function tabBtnClass(active) {
             <button
               v-if="entry.kind === 'print'"
               type="button"
-              class="group text-left rounded-2xl overflow-hidden bg-surface-900/90 border border-cyan-500/15 hover:border-cyan-400/45 hover:shadow-xl hover:shadow-cyan-500/15 transition-all duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400 ring-1 ring-white/[0.04]"
+              class="group text-left rounded-2xl overflow-hidden bg-surface-900/90 border border-cyan-500/15 hover:border-cyan-400/45 hover:shadow-xl hover:shadow-cyan-500/15 transition-all duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400 ring-1 ring-white/4"
               @click="openPrint(entry)"
             >
               <div class="relative aspect-[3/4] bg-linear-to-br from-surface-700 to-surface-900 overflow-hidden">
@@ -228,7 +228,7 @@ function tabBtnClass(active) {
                   </p>
                 </div>
               </div>
-              <div class="p-3 border-t border-white/[0.06]">
+              <div class="p-3 border-t border-white/6">
                 <p class="text-xs font-semibold text-white leading-snug line-clamp-2 group-hover:text-cyan-200 transition-colors">
                   {{ entry.title }}
                 </p>
@@ -245,7 +245,7 @@ function tabBtnClass(active) {
               target="_blank"
               rel="noopener noreferrer"
               :class="[
-                'group flex flex-col rounded-2xl overflow-hidden bg-surface-900/90 border border-amber-500/18 hover:border-amber-400/50 hover:shadow-xl hover:shadow-amber-500/15 transition-all duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 ring-1 ring-white/[0.04]',
+                'group flex flex-col rounded-2xl overflow-hidden bg-surface-900/90 border border-amber-500/18 hover:border-amber-400/50 hover:shadow-xl hover:shadow-amber-500/15 transition-all duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 ring-1 ring-white/4',
                 tcgCardOpacity(entry.raw),
               ]"
             >
@@ -282,7 +282,7 @@ function tabBtnClass(active) {
                   </p>
                 </div>
               </div>
-              <div class="p-3 flex flex-col flex-1 border-t border-white/[0.06]">
+              <div class="p-3 flex flex-col flex-1 border-t border-white/6">
                 <p class="text-xs font-semibold text-white leading-snug line-clamp-2">
                   {{ tcgName(entry.raw) }}
                 </p>

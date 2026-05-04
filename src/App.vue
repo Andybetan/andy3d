@@ -4,6 +4,7 @@ import { getStoredLocale, setStoredLocale, t as translate } from './i18n'
 import AppHeader from './components/AppHeader.vue'
 import HeroSection from './components/HeroSection.vue'
 import CollectorsFusionSection from './components/CollectorsFusionSection.vue'
+import CardmarketSection from './components/CardmarketSection.vue'
 import GallerySection from './components/GallerySection.vue'
 import ProcessSection from './components/ProcessSection.vue'
 import CustomOrderSection from './components/CustomOrderSection.vue'
@@ -63,6 +64,7 @@ function closeLegal() {
     <main class="pt-16 flex-1">
       <HeroSection />
       <CollectorsFusionSection />
+      <CardmarketSection />
       <GallerySection />
       <ProcessSection />
       <CustomOrderSection />
