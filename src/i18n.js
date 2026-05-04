@@ -49,6 +49,7 @@ const translations = {
       hint: 'Opens Cardmarket in a new tab. Seller: AndyBetan.',
       cta: 'View my Cardmarket shop',
       stockTitle: 'Featured listings',
+      stockSubtitle: 'Tap a card for full details and checkout on Cardmarket.',
       stockDisclaimer:
         'Prices and availability may change on Cardmarket — always check the live listing before buying.',
       miniLink: 'Open on Cardmarket',
@@ -169,6 +170,7 @@ const translations = {
       hint: 'Se abre Cardmarket en una pestaña nueva. Vendedor: AndyBetan.',
       cta: 'Ir a mi tienda Cardmarket',
       stockTitle: 'Destacados en stock',
+      stockSubtitle: 'Toca una tarjeta para ver el anuncio completo y comprar en Cardmarket.',
       stockDisclaimer:
         'Los precios y la disponibilidad pueden cambiar en Cardmarket: revisa siempre el anuncio actual antes de comprar.',
       miniLink: 'Ver en Cardmarket',

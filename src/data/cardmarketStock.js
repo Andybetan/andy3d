@@ -26,21 +26,21 @@ export const cardmarketStock = [
   {
     kind: 'single',
     status: 'in_stock',
-    price: '—',
-    image: '',
+    price: '30 €',
+    image: '/cardmarket/piplup-098-094.png',
     href: '',
     name: {
-      es: 'Segunda carta',
-      en: 'Second single',
+      es: 'Piplup',
+      en: 'Piplup',
     },
     rarity: {
-      es: '',
-      en: '',
+      es: 'Rara ilustración',
+      en: 'Illustration Rare',
     },
-    number: '',
+    number: '098/094',
     setName: {
-      es: '',
-      en: '',
+      es: 'Fuegos Fantasmales',
+      en: 'Phantom Forces',
     },
     condition: {
       es: 'NM',
@@ -50,12 +50,12 @@ export const cardmarketStock = [
   {
     kind: 'etb',
     status: 'in_stock',
-    price: '—',
-    image: '',
+    price: '300 €',
+    image: '/cardmarket/etb-scarlet-violet.png',
     href: '',
     name: {
-      es: 'ETB Héroes Ascendentes',
-      en: 'ETB Shrouded Fable',
+      es: 'Caja de Entrenador Élite Miraidon · Escarlata y Púrpura',
+      en: 'Elite Trainer Box Miraidon · Scarlet & Violet',
     },
     rarity: {
       es: 'Sellado',
@@ -63,12 +63,12 @@ export const cardmarketStock = [
     },
     number: '',
     setName: {
-      es: 'Pokémon TCG',
-      en: 'Pokémon TCG',
+      es: 'Escarlata y Púrpura',
+      en: 'Scarlet & Violet',
     },
     condition: {
-      es: 'Nuevo · sin abrir',
-      en: 'New · sealed',
+      es: 'Nuevo · sellado sin abrir',
+      en: 'New · sealed unopened',
     },
   },
 ]

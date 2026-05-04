@@ -66,10 +66,10 @@ function placeholderCaption(item) {
   <section id="cardmarket" class="section-padding bg-surface-800/40 scroll-mt-20">
     <div class="max-w-6xl mx-auto">
       <div
-        class="rounded-3xl bg-linear-to-br from-surface-700 via-surface-800 to-surface-900 border border-amber-500/20 p-8 sm:p-12 flex flex-col sm:flex-row items-center gap-8 transition-all duration-300 hover:border-amber-400/35 hover:shadow-xl hover:shadow-amber-500/10"
+        class="rounded-3xl bg-linear-to-br from-surface-700 via-surface-800 to-surface-900 border border-amber-500/20 p-6 sm:p-10 lg:p-11 flex flex-col sm:flex-row items-center gap-6 sm:gap-8 transition-all duration-300 hover:border-amber-400/35 hover:shadow-xl hover:shadow-amber-500/10 ring-1 ring-white/[0.04]"
       >
         <div
-          class="shrink-0 w-24 h-24 rounded-2xl bg-linear-to-br from-amber-500/20 to-slate-900 border border-amber-500/25 flex items-center justify-center"
+          class="shrink-0 w-[5.25rem] h-[5.25rem] sm:w-24 sm:h-24 rounded-2xl bg-linear-to-br from-amber-500/20 to-slate-900 border border-amber-500/25 flex items-center justify-center shadow-inner shadow-black/20"
           aria-hidden="true"
         >
           <svg
@@ -112,23 +112,23 @@ function placeholderCaption(item) {
           <p class="text-xs font-semibold uppercase tracking-widest text-amber-400/80 mb-2">
             {{ t('cardmarket.badge') }}
           </p>
-          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight">
             {{ t('cardmarket.title') }}
           </h2>
-          <p class="text-slate-400 mb-4">
+          <p class="text-slate-400 text-sm sm:text-base mb-3 leading-relaxed">
             {{ t('cardmarket.text') }}
           </p>
-          <p class="text-sm text-slate-500">
+          <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
             {{ t('cardmarket.hint') }}
           </p>
         </div>
 
-        <div class="flex flex-col sm:flex-col gap-3 shrink-0 w-full sm:w-auto">
+        <div class="flex flex-col gap-2.5 shrink-0 w-full sm:w-auto sm:min-w-[200px]">
           <a
             :href="cardmarketUrl"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-linear-to-r from-amber-500 to-amber-600 text-slate-950 font-semibold shadow-lg shadow-amber-500/25 hover:opacity-95 transition-opacity text-center"
+            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-linear-to-r from-amber-500 to-amber-600 text-slate-950 text-sm sm:text-base font-semibold shadow-lg shadow-amber-500/25 hover:brightness-105 transition-all text-center"
           >
             {{ t('cardmarket.cta') }}
             <span aria-hidden="true">→</span>
@@ -139,12 +139,20 @@ function placeholderCaption(item) {
         </div>
       </div>
 
-      <div class="mt-12">
-        <h3 class="text-lg sm:text-xl font-bold text-white mb-6 text-center sm:text-left">
-          {{ t('cardmarket.stockTitle') }}
-        </h3>
+      <div class="mt-10 sm:mt-12">
+        <div class="mb-5 sm:mb-6 text-center sm:text-left">
+          <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight">
+            {{ t('cardmarket.stockTitle') }}
+          </h3>
+          <p class="mt-1 text-xs sm:text-sm text-slate-500 max-w-xl mx-auto sm:mx-0">
+            {{ t('cardmarket.stockSubtitle') }}
+          </p>
+        </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <!-- Columnas de ancho acotado: tarjetas más compactas y centradas -->
+        <div
+          class="mx-auto w-full max-w-[26rem] sm:max-w-none grid justify-center gap-3 sm:gap-4 [grid-template-columns:repeat(auto-fill,minmax(142px,168px))] sm:[grid-template-columns:repeat(auto-fill,minmax(152px,178px))]"
+        >
           <a
             v-for="(item, index) in cardmarketStock"
             :key="index"
@@ -152,7 +160,7 @@ function placeholderCaption(item) {
             target="_blank"
             rel="noopener noreferrer"
             :class="[
-              'group flex flex-col rounded-2xl bg-surface-900/80 border border-amber-500/15 hover:border-amber-400/40 hover:shadow-lg hover:shadow-amber-500/10 transition-all duration-300 hover:-translate-y-0.5 overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400',
+              'group flex flex-col rounded-xl bg-surface-900/85 border border-amber-500/12 hover:border-amber-400/45 hover:shadow-lg hover:shadow-amber-500/15 transition-all duration-300 hover:-translate-y-0.5 overflow-hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400 ring-1 ring-black/30',
               cardOpacity(item),
             ]"
           >
@@ -161,7 +169,7 @@ function placeholderCaption(item) {
               :class="mediaAspectClass(item)"
             >
               <span
-                class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold uppercase tracking-wide"
+                class="absolute top-1.5 left-1.5 z-10 px-1.5 py-px rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wide"
                 :class="badgeClass(item)"
               >
                 {{ stockBadge(item) }}
@@ -170,7 +178,7 @@ function placeholderCaption(item) {
                 v-if="item.image"
                 :src="item.image"
                 :alt="imgAlt(item)"
-                class="absolute inset-0 w-full h-full object-contain object-center p-1 bg-surface-950 transition-transform duration-300 group-hover:scale-[1.02]"
+                class="absolute inset-0 w-full h-full object-contain object-center p-1 sm:p-1.5 bg-surface-950 transition-transform duration-300 group-hover:scale-[1.02]"
                 loading="lazy"
               />
               <div
@@ -198,38 +206,38 @@ function placeholderCaption(item) {
                 </span>
               </div>
               <div
-                class="absolute bottom-0 left-0 right-0 pt-10 pb-2 px-3 bg-linear-to-t from-black/90 via-black/55 to-transparent"
+                class="absolute bottom-0 left-0 right-0 pt-8 pb-1.5 px-2 sm:px-2.5 bg-linear-to-t from-black/92 via-black/50 to-transparent"
               >
                 <p
-                  class="text-right text-lg font-bold tabular-nums text-amber-300 drop-shadow-md"
+                  class="text-right text-sm sm:text-base font-bold tabular-nums text-amber-300 drop-shadow-md"
                   :class="{ 'line-through opacity-70': item.status === 'sold' }"
                 >
                   {{ item.price }}
                 </p>
               </div>
             </div>
-            <div class="p-3 sm:p-4 flex flex-col flex-1 gap-1.5 text-left">
-              <p class="text-sm font-semibold text-white leading-snug line-clamp-2">
+            <div class="p-2.5 sm:p-3 flex flex-col flex-1 gap-1 text-left border-t border-white/[0.06]">
+              <p class="text-[11px] sm:text-xs font-semibold text-white leading-snug line-clamp-2">
                 {{ cardName(item) }}
               </p>
-              <p v-if="pick(item.rarity)" class="text-[11px] sm:text-xs text-slate-400 leading-snug">
+              <p v-if="pick(item.rarity)" class="text-[10px] sm:text-[11px] text-slate-400 leading-snug line-clamp-2">
                 <span class="text-slate-500">{{ t('cardmarket.labelRarity') }}</span>
                 {{ pick(item.rarity) }}
               </p>
-              <p v-if="item.number?.trim()" class="text-[11px] sm:text-xs text-slate-400 leading-snug">
+              <p v-if="item.number?.trim()" class="text-[10px] sm:text-[11px] text-slate-400 leading-snug">
                 <span class="text-slate-500">{{ t('cardmarket.labelNumber') }}</span>
                 {{ item.number.trim() }}
               </p>
-              <p v-if="pick(item.setName)" class="text-[11px] sm:text-xs text-slate-500 leading-snug">
+              <p v-if="pick(item.setName)" class="text-[10px] sm:text-[11px] text-slate-500 leading-snug line-clamp-2">
                 <span class="text-slate-600">{{ t('cardmarket.labelSet') }}</span>
                 {{ pick(item.setName) }}
               </p>
-              <p v-if="pick(item.condition)" class="text-[11px] text-slate-600">
+              <p v-if="pick(item.condition)" class="text-[10px] text-slate-600 leading-snug">
                 <span class="text-slate-600">{{ t('cardmarket.labelCondition') }}</span>
                 {{ pick(item.condition) }}
               </p>
               <span
-                class="text-xs font-medium text-amber-400/90 mt-1 opacity-80 group-hover:opacity-100 transition-opacity"
+                class="text-[10px] sm:text-[11px] font-medium text-amber-400/85 mt-0.5 opacity-80 group-hover:opacity-100 transition-opacity"
               >
                 {{ t('cardmarket.miniLink') }}
               </span>
@@ -237,7 +245,7 @@ function placeholderCaption(item) {
           </a>
         </div>
 
-        <p class="mt-6 text-xs text-slate-500 text-center sm:text-left max-w-2xl">
+        <p class="mt-5 sm:mt-6 text-[11px] sm:text-xs text-slate-500 text-center sm:text-left max-w-2xl leading-relaxed">
           {{ t('cardmarket.stockDisclaimer') }}
         </p>
       </div>
