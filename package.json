@@ -1,5 +1,5 @@
 {
-  "name": "mi-proyecto",
+  "name": "web-andy3d",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,10 +12,10 @@
     "vue": "^3.4.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.2.4",
     "@vitejs/plugin-vue": "^5.0.0",
     "autoprefixer": "^10.4.27",
     "postcss": "^8.5.8",
-    "@tailwindcss/postcss": "^4.0.0",
     "tailwindcss": "^4.0.0",
     "vite": "^5.0.0"
   }

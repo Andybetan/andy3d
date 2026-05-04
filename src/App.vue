@@ -7,6 +7,7 @@ import GallerySection from './components/GallerySection.vue'
 import ProcessSection from './components/ProcessSection.vue'
 import CustomOrderSection from './components/CustomOrderSection.vue'
 import TikTokSection from './components/TikTokSection.vue'
+import CardmarketSection from './components/CardmarketSection.vue'
 import CTASection from './components/CTASection.vue'
 import VideoAvatar from './components/VideoAvatar.vue'
 
@@ -65,6 +66,7 @@ function closeLegal() {
       <ProcessSection />
       <CustomOrderSection />
       <TikTokSection />
+      <CardmarketSection />
       <CTASection />
     </main>
 

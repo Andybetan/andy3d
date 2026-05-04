@@ -1,6 +1,6 @@
 const translations = {
   en: {
-    nav: { creations: 'Creations', custom: 'Custom', contact: 'Contact' },
+    nav: { creations: 'Creations', custom: 'Custom', cardmarket: 'Pokémon TCG', contact: 'Contact' },
     hero: {
       title1: 'Unique 3D Printed',
       title2: 'Creations',
@@ -41,6 +41,29 @@ const translations = {
       title: 'Follow on TikTok',
       text: 'Behind the scenes, new designs and 3D printing tips.',
       follow: 'Follow',
+    },
+    cardmarket: {
+      badge: 'Also on Cardmarket',
+      title: 'Pokémon singles & sealed',
+      text: 'I sell selected Pokémon cards and products (e.g. ETBs) on Cardmarket. Browse my listings, prices and availability there — purchases are processed safely through the marketplace.',
+      hint: 'Opens Cardmarket in a new tab. Seller: AndyBetan.',
+      cta: 'View my Cardmarket shop',
+      stockTitle: 'Featured listings',
+      stockDisclaimer:
+        'Prices and availability may change on Cardmarket — always check the live listing before buying.',
+      miniLink: 'Open on Cardmarket',
+      imagePlaceholder: 'Add photo',
+      imagePlaceholderEtb: 'Add ETB photo',
+      cardFallbackTitle: 'Listing',
+      labelRarity: 'Rarity:',
+      labelNumber: 'Number:',
+      labelSet: 'Set:',
+      labelCondition: 'Condition:',
+      stockStatus: {
+        in_stock: 'In stock',
+        sold: 'Sold',
+        coming_soon: 'Soon',
+      },
     },
     cta: {
       title: 'Bring your ideas to life in 3D',
@@ -97,7 +120,7 @@ const translations = {
     },
   },
   es: {
-    nav: { creations: 'Creaciones', custom: 'Personalizado', contact: 'Contacto' },
+    nav: { creations: 'Creaciones', custom: 'Personalizado', cardmarket: 'Pokémon TCG', contact: 'Contacto' },
     hero: {
       title1: 'Creaciones únicas',
       title2: 'en impresión 3D',
@@ -138,6 +161,29 @@ const translations = {
       title: 'Sígueme en TikTok',
       text: 'Detrás de cámaras, nuevos diseños y tips de impresión 3D.',
       follow: 'Seguir',
+    },
+    cardmarket: {
+      badge: 'También en Cardmarket',
+      title: 'Cartas Pokémon y sellado',
+      text: 'Vendo cartas sueltas y productos Pokémon seleccionados (ETBs, etc.) en Cardmarket. Ahí verás anuncios, precios y disponibilidad; la compra se gestiona de forma segura en la plataforma.',
+      hint: 'Se abre Cardmarket en una pestaña nueva. Vendedor: AndyBetan.',
+      cta: 'Ir a mi tienda Cardmarket',
+      stockTitle: 'Destacados en stock',
+      stockDisclaimer:
+        'Los precios y la disponibilidad pueden cambiar en Cardmarket: revisa siempre el anuncio actual antes de comprar.',
+      miniLink: 'Ver en Cardmarket',
+      imagePlaceholder: 'Añade foto',
+      imagePlaceholderEtb: 'Foto de la ETB',
+      cardFallbackTitle: 'Anuncio',
+      labelRarity: 'Rareza:',
+      labelNumber: 'Número:',
+      labelSet: 'Colección:',
+      labelCondition: 'Estado:',
+      stockStatus: {
+        in_stock: 'En stock',
+        sold: 'Vendida',
+        coming_soon: 'Próximamente',
+      },
     },
     cta: {
       title: 'Dale vida a tus ideas en 3D',

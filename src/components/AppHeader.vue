@@ -28,6 +28,7 @@ function changeLocale(lang) {
       <nav class="hidden md:flex items-center gap-8 text-sm">
         <a href="#gallery" class="text-slate-400 hover:text-white transition-colors">{{ t('nav.creations') }}</a>
         <a href="#custom" class="text-slate-400 hover:text-white transition-colors">{{ t('nav.custom') }}</a>
+        <a href="#cardmarket" class="text-slate-400 hover:text-white transition-colors">{{ t('nav.cardmarket') }}</a>
         <a href="#contact" class="text-slate-400 hover:text-white transition-colors">{{ t('nav.contact') }}</a>
         <div class="flex items-center gap-1 border-l border-slate-600 pl-4">
           <button
@@ -103,6 +104,13 @@ function changeLocale(lang) {
               @click="closeMenu"
             >
               {{ t('nav.custom') }}
+            </a>
+            <a
+              href="#cardmarket"
+              class="py-1 text-slate-200 hover:text-white transition-colors"
+              @click="closeMenu"
+            >
+              {{ t('nav.cardmarket') }}
             </a>
             <a
               href="#contact"
