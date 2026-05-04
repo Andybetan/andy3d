@@ -45,7 +45,7 @@ function badgeClassTcg(item) {
 }
 
 function tcgAspect(kind) {
-  return kind === 'etb' ? 'aspect-[5/4]' : 'aspect-[63/88]'
+  return kind === 'etb' ? 'aspect-5/4' : 'aspect-63/88'
 }
 
 function tcgCardOpacity(raw) {

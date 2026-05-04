@@ -49,7 +49,7 @@ function badgeClassTcg(item) {
 }
 
 function tcgAspect(kind) {
-  return kind === 'etb' ? 'aspect-[5/4]' : 'aspect-[63/88]'
+  return kind === 'etb' ? 'aspect-5/4' : 'aspect-63/88'
 }
 
 function tcgCardOpacity(raw) {
@@ -207,7 +207,7 @@ function tabBtnClass(active) {
               class="group text-left rounded-2xl overflow-hidden bg-surface-900/90 border border-cyan-500/15 hover:border-cyan-400/45 hover:shadow-xl hover:shadow-cyan-500/15 transition-all duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400 ring-1 ring-white/4"
               @click="openPrint(entry)"
             >
-              <div class="relative aspect-[3/4] bg-linear-to-br from-surface-700 to-surface-900 overflow-hidden">
+              <div class="relative aspect-3/4 bg-linear-to-br from-surface-700 to-surface-900 overflow-hidden">
                 <span
                   class="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wide bg-cyan-500/90 text-slate-950 shadow-md"
                 >
