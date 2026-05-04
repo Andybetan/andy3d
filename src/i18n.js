@@ -1,18 +1,48 @@
 const translations = {
   en: {
-    nav: { creations: 'Creations', custom: 'Custom', cardmarket: 'Pokémon TCG', contact: 'Contact' },
+    nav: {
+      showcase: 'Showcase',
+      creations: '3D gallery',
+      custom: 'Custom',
+      contact: 'Contact',
+    },
     hero: {
       title1: 'Unique 3D Printed',
       title2: 'Creations',
-      subtitle: 'Design, creativity and 3D printing by Andy',
-      viewCreations: 'View creations',
-      requestFigure: 'Request custom figure',
+      subtitle:
+        'One workshop for collectors: zoom printed figures here, jump straight to Pokémon singles & sealed on Cardmarket.',
+      ctaShowcase: 'Open the showcase',
+      requestFigure: 'Commission a custom print',
+      archiveLink: 'See the full 3D gallery →',
+      collageCaption: 'Same shelf energy — real prints next to real listings.',
+      collageCardAlt: 'Example Pokémon Trading Card Game card listed for sale',
       cardTitle: 'Mimikyu',
       cardSubtitle: 'Yellow & black filament · Printed with Anycubic Kobra S1',
     },
+    fusion: {
+      badge: 'Interactive showcase',
+      title: '3D prints & Pokémon TCG in one grid',
+      subtitle:
+        'Mix or filter: enlarge workshop prints on this site; tap any card to finish purchase securely on Cardmarket.',
+      tabAll: 'Mixed picks',
+      tabPrints: '3D prints',
+      tabTcg: 'TCG shop',
+      bridge: 'Collector desk',
+      badgePrint: '3D print',
+      badgeTcg: 'TCG',
+      hintPrint: 'Tap to enlarge',
+      ctaTcg: 'Listing · Cardmarket →',
+      footerHint:
+        'Featured prints are highlights from the gallery below. Card prices follow live Cardmarket listings.',
+      cardmarketStripTitle: 'Checkout happens on Cardmarket',
+      cardmarketStripText:
+        'Buyer protection and payments are handled by Cardmarket — seller profile AndyBetan.',
+      closeLightbox: 'Close',
+    },
     gallery: {
       title: 'Creations',
-      subtitle: 'A selection of 3D printed pieces: figures, dioramas and useful objects.',
+      subtitle:
+        'Full archive from the printer: dioramas, figures and desk pieces — go deeper after the mixed showcase above.',
       items: [
         { title: 'Mimikyu figure', description: 'Adorable Pokémon figure with fine details and smooth finish. Perfect for collectors.', image: '/mimikyu-hero.png' },
         { title: 'Samurai statue', description: 'Elegant samurai bust with traditional armor details. A striking display piece.', image: '/samurai-hero.png' },
@@ -39,14 +69,15 @@ const translations = {
     },
     tiktok: {
       title: 'Follow on TikTok',
-      text: 'Behind the scenes, new designs and 3D printing tips.',
+      text: 'Prints in progress, new models — and Pokémon TCG when there’s something worth showing.',
       follow: 'Follow',
     },
     cardmarket: {
-      badge: 'Also on Cardmarket',
+      badge: 'Same studio · Two passions',
       title: 'Pokémon singles & sealed',
-      text: 'I sell selected Pokémon cards and products (e.g. ETBs) on Cardmarket. Browse my listings, prices and availability there — purchases are processed safely through the marketplace.',
-      hint: 'Opens Cardmarket in a new tab. Seller: AndyBetan.',
+      text:
+        'Collecting doesn’t stop at the binder: I sell chosen Pokémon singles and sealed product on Cardmarket as part of Andy3D. Same eye for detail — transparent photos and listings you can trust.',
+      hint: 'Opens Cardmarket (new tab). Seller profile: AndyBetan.',
       cta: 'View my Cardmarket shop',
       stockTitle: 'Featured listings',
       stockSubtitle: 'Tap a card for full details and checkout on Cardmarket.',
@@ -67,8 +98,8 @@ const translations = {
       },
     },
     cta: {
-      title: 'Bring your ideas to life in 3D',
-      subtitle: "Tell me your idea and we'll make it real.",
+      title: 'Prints, figures — or questions about a card?',
+      subtitle: 'Whether it’s a custom 3D piece or a TCG listing, write me and we’ll sort it out.',
       button: 'Contact Andy3D',
     },
     contactForm: {
@@ -80,13 +111,13 @@ const translations = {
       close: 'Close',
       namePlaceholder: 'Your name',
       emailPlaceholder: 'your@email.com',
-      messagePlaceholder: 'Tell me your idea or request...',
+      messagePlaceholder: 'Your idea for a print, or a question about a Pokémon listing…',
       success: 'Message sent. We\'ll get back to you soon!',
     },
     avatar: {
       label: 'Andy3D avatar',
       welcome: 'Welcome!',
-      bubble: 'Hi! I\'m Andy3D and I\'ll bring your ideas to life in 3D.',
+      bubble: 'Hi! I\'m Andy3D — 3D prints and Pokémon TCG. Ask me about a figure or a card.',
       bubbleSuccess: 'Your message has been sent successfully to info@andy3d.es. Thank you!',
     },
     legal: {
@@ -100,7 +131,8 @@ const translations = {
       moreInfo: 'More information',
       onlyNecessary: 'Necessary only',
       acceptAll: 'Accept all',
-      intro1: 'This website uses first and third party cookies to improve your browsing experience, analyze traffic and, where appropriate, display personalized content related to 3D printing.',
+      intro1:
+        'This website uses first and third party cookies to improve your browsing experience, analyze traffic and, where appropriate, display personalized content related to 3D printing and Pokémon TCG.',
       intro2: 'Cookies are small files stored on your device. You can set your browser to block or delete them, although some features of the site may no longer be available.',
       typesTitle: 'Types of cookies we may use:',
       technical: 'Technical: essential for the basic operation of the website.',
@@ -109,31 +141,63 @@ const translations = {
     },
     legalNotice: {
       intro1: 'In compliance with applicable Spanish and European regulations, the owner of this website is ',
-      intro2: 'The content of this website is for informational purposes and is intended to showcase projects and services related to custom 3D printing. Use of this website implies acceptance of these legal terms.',
+      intro2:
+        'The content of this website is for informational purposes and showcases custom 3D printing projects plus Pokémon TCG listings via Cardmarket. Use of this website implies acceptance of these legal terms.',
       intro3: 'Total or partial reproduction of the content without express authorization from the owner is prohibited. The designs and brands mentioned belong to their respective owners.',
       contact: 'For any inquiry related to this legal notice, you can write to',
     },
     privacy: {
-      intro1: 'Personal data that you provide through contact forms will be processed for the purpose of responding to your inquiries or requests for quotes related to 3D printing projects.',
+      intro1:
+        'Personal data that you provide through contact forms will be processed to respond to inquiries about 3D printing projects or Pokémon TCG listings.',
       intro2: 'The data controller is Andres Beltran Betancourt. Your data will not be shared with third parties except where required by law. The legal basis for processing is your consent, which you may withdraw at any time.',
       intro3: 'You have the right to access, rectify and delete your data, as well as other rights under data protection law. To exercise them you can write to',
       review: 'This policy is reviewed periodically to keep it up to date with applicable regulations.',
     },
   },
   es: {
-    nav: { creations: 'Creaciones', custom: 'Personalizado', cardmarket: 'Pokémon TCG', contact: 'Contacto' },
+    nav: {
+      showcase: 'Vitrina',
+      creations: 'Galería 3D',
+      custom: 'Personalizado',
+      contact: 'Contacto',
+    },
     hero: {
       title1: 'Creaciones únicas',
       title2: 'en impresión 3D',
-      subtitle: 'Diseño, creatividad e impresión 3D por Andy',
-      viewCreations: 'Ver creaciones',
+      subtitle:
+        'El mismo taller para coleccionistas: amplía las figuras aquí y salta a cartas Pokémon sueltas o sellado en Cardmarket.',
+      ctaShowcase: 'Abrir vitrina interactiva',
       cardTitle: 'Mimikyu',
       cardSubtitle: 'Filamento amarillo y negro · Impreso con Anycubic Kobra S1',
-      requestFigure: 'Solicitar figura personalizada',
+      requestFigure: 'Encargar pieza 3D',
+      archiveLink: 'Ver galería 3D completa →',
+      collageCaption: 'Misma mesa: pieza impresa y carta real en venta.',
+      collageCardAlt: 'Ejemplo de carta Pokémon TCG en venta',
+    },
+    fusion: {
+      badge: 'Vitrina interactiva',
+      title: 'Impresión 3D y Pokémon TCG en la misma rejilla',
+      subtitle:
+        'Mezcla o filtra: amplía las piezas del taller aquí; cualquier carta te lleva a comprar con seguridad en Cardmarket.',
+      tabAll: 'Todo mezclado',
+      tabPrints: 'Solo impresión 3D',
+      tabTcg: 'Solo cartas',
+      bridge: 'Mesa del coleccionista',
+      badgePrint: 'Pieza 3D',
+      badgeTcg: 'TCG',
+      hintPrint: 'Toca para ampliar',
+      ctaTcg: 'Anuncio · Cardmarket →',
+      footerHint:
+        'Las piezas destacadas son una muestra; la galería completa está abajo. Los precios de cartas siguen el anuncio en vivo.',
+      cardmarketStripTitle: 'La compra se cierra en Cardmarket',
+      cardmarketStripText:
+        'Pagos y protección de comprador los gestiona Cardmarket — perfil AndyBetan.',
+      closeLightbox: 'Cerrar',
     },
     gallery: {
       title: 'Creaciones',
-      subtitle: 'Una selección de piezas impresas en 3D: figuras, dioramas y objetos útiles.',
+      subtitle:
+        'Archivo completo del taller: más figuras, dioramas y fotos — después de la vitrina mezclada de arriba.',
       items: [
         { title: 'Figura Mimikyu', description: 'Figura de Pokémon con detalles finos y acabado suave. Ideal para coleccionistas.', image: '/mimikyu-hero.png' },
         { title: 'Estatua samurái', description: 'Busto de samurái con detalles de armadura tradicional. Pieza impactante.', image: '/samurai-hero.png' },
@@ -160,14 +224,15 @@ const translations = {
     },
     tiktok: {
       title: 'Sígueme en TikTok',
-      text: 'Detrás de cámaras, nuevos diseños y tips de impresión 3D.',
+      text: 'Impresiones en marcha, nuevos modelos y Pokémon TCG cuando hay algo que merece salir en vídeo.',
       follow: 'Seguir',
     },
     cardmarket: {
-      badge: 'También en Cardmarket',
+      badge: 'Mismo taller · Dos mundos',
       title: 'Cartas Pokémon y sellado',
-      text: 'Vendo cartas sueltas y productos Pokémon seleccionados (ETBs, etc.) en Cardmarket. Ahí verás anuncios, precios y disponibilidad; la compra se gestiona de forma segura en la plataforma.',
-      hint: 'Se abre Cardmarket en una pestaña nueva. Vendedor: AndyBetan.',
+      text:
+        'El coleccionismo no termina en la carpeta: en Cardmarket vendo cartas sueltas y sellado Pokémon como parte de Andy3D. Mismo criterio que en el 3D — fotos claras y anuncios claros.',
+      hint: 'Se abre Cardmarket en una pestaña nueva. Perfil de vendedor: AndyBetan.',
       cta: 'Ir a mi tienda Cardmarket',
       stockTitle: 'Destacados en stock',
       stockSubtitle: 'Toca una tarjeta para ver el anuncio completo y comprar en Cardmarket.',
@@ -188,8 +253,8 @@ const translations = {
       },
     },
     cta: {
-      title: 'Dale vida a tus ideas en 3D',
-      subtitle: 'Cuéntame tu idea y la hacemos realidad.',
+      title: '¿Figura en 3D o duda con una carta?',
+      subtitle: 'Ya sea un encargo de impresión o una consulta sobre TCG, escríbeme y lo vemos.',
       button: 'Contactar Andy3D',
     },
     contactForm: {
@@ -201,13 +266,13 @@ const translations = {
       close: 'Cerrar',
       namePlaceholder: 'Tu nombre',
       emailPlaceholder: 'tu@correo.com',
-      messagePlaceholder: 'Cuéntame tu idea o solicitud...',
+      messagePlaceholder: 'Tu idea de impresión 3D, o una pregunta sobre un anuncio de cartas…',
       success: 'Mensaje enviado. Te responderé pronto.',
     },
     avatar: {
       label: 'Avatar de Andy3D',
       welcome: 'Bienvenid@/s!',
-      bubble: '¡Hola! Soy Andy3D y te ayudaré a dar vida a tus ideas en 3D.',
+      bubble: '¡Hola! Soy Andy3D: impresión 3D y Pokémon TCG. Pregunta por una figura o por una carta.',
       bubbleSuccess: 'Tu mensaje se ha enviado correctamente a info@andy3d.es. ¡Gracias!',
     },
     legal: {
@@ -221,7 +286,8 @@ const translations = {
       moreInfo: 'Más información',
       onlyNecessary: 'Solo necesarias',
       acceptAll: 'Aceptar todas',
-      intro1: 'Este sitio web utiliza cookies propias y de terceros con la finalidad de mejorar la experiencia de navegación, analizar el tráfico y, en su caso, mostrar contenidos personalizados relacionados con impresión 3D.',
+      intro1:
+        'Este sitio web utiliza cookies propias y de terceros para mejorar la experiencia de navegación, analizar el tráfico y, en su caso, mostrar contenidos relacionados con impresión 3D y Pokémon TCG.',
       intro2: 'Las cookies son pequeños archivos que se almacenan en tu dispositivo. Puedes configurar tu navegador para bloquearlas o eliminarlas, aunque algunas funcionalidades de la web podrían dejar de estar disponibles.',
       typesTitle: 'Tipos de cookies que podemos utilizar:',
       technical: 'Técnicas: necesarias para el funcionamiento básico de la web.',
@@ -230,12 +296,14 @@ const translations = {
     },
     legalNotice: {
       intro1: 'En cumplimiento con lo dispuesto en la normativa española y europea vigente, se informa que el responsable de este sitio web es ',
-      intro2: 'El contenido de esta web tiene carácter informativo y está orientado a mostrar proyectos y servicios relacionados con impresión 3D personalizados. El uso del sitio web implica la aceptación de estas condiciones legales.',
+      intro2:
+        'El contenido de esta web es informativo: proyectos de impresión 3D personalizada y enlaces a venta de Pokémon TCG en Cardmarket. El uso del sitio implica la aceptación de estas condiciones legales.',
       intro3: 'Queda prohibida la reproducción total o parcial de los contenidos sin autorización expresa del titular. Los diseños y marcas mencionados pertenecen a sus respectivos propietarios.',
       contact: 'Para cualquier consulta relacionada con este aviso legal, puedes escribir a',
     },
     privacy: {
-      intro1: 'Los datos personales que puedas facilitar a través de los formularios de contacto se tratarán con la finalidad de responder a tus consultas o solicitudes de presupuestos relacionados con proyectos de impresión 3D.',
+      intro1:
+        'Los datos que facilites por los formularios se tratarán para responder consultas sobre proyectos de impresión 3D o sobre anuncios de Pokémon TCG.',
       intro2: 'El responsable del tratamiento es Andres Beltran Betancourt. Tus datos no se cederán a terceros salvo obligación legal. La base jurídica del tratamiento es tu consentimiento, que puedes retirar en cualquier momento.',
       intro3: 'Tienes derecho a acceder, rectificar y suprimir tus datos, así como otros derechos reconocidos por la normativa de protección de datos. Para ejercerlos puedes escribir a',
       review: 'Esta política se revisa periódicamente para mantenerla actualizada conforme a la normativa aplicable.',
