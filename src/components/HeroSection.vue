@@ -59,10 +59,12 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
             </a>
           </p>
 
-          <!-- Mesa coleccionista (móvil): dos columnas iguales — mismo tamaño que Mimikyu -->
-          <div class="lg:hidden mt-10 grid grid-cols-2 gap-3 sm:gap-4 max-w-lg mx-auto items-start">
-            <div class="relative w-full min-w-0 flex flex-col">
-              <div class="relative w-full aspect-square rounded-2xl overflow-hidden border border-cyan-500/25 shadow-xl shadow-cyan-500/10 ring-1 ring-white/10 bg-surface-800">
+          <!-- Mesa coleccionista (móvil): flex clásico — escritorio sin cambios -->
+          <div class="lg:hidden mt-10 flex justify-center items-end gap-3 sm:gap-4 max-w-lg mx-auto">
+            <div class="relative w-[42%] sm:w-[40%] shrink-0 flex flex-col">
+              <div
+                class="relative rounded-2xl overflow-hidden border border-cyan-500/25 shadow-xl shadow-cyan-500/10 ring-1 ring-white/10 bg-surface-800 aspect-square"
+              >
                 <img
                   src="/mimikyu-hero.png"
                   :alt="t('hero.cardTitle')"
@@ -130,34 +132,29 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
               </p>
             </div>
 
-            <div class="relative w-full min-w-0 flex flex-col">
+            <div class="relative flex-1 min-w-0 flex flex-col">
               <Transition name="hero-tcg">
                 <div v-show="!printDetailOpen" class="flex flex-col">
                   <div
-                    class="relative w-full aspect-square rounded-2xl overflow-visible ring-1 ring-amber-500/15 bg-surface-900/40"
+                    class="relative w-full flex justify-center items-end min-h-[10rem] sm:min-h-[11rem] pb-7 pt-2"
                   >
-                    <!-- Abanico contenido en el mismo cuadrado que Mimikyu -->
-                    <div class="absolute inset-x-1.5 inset-y-2 bottom-8 flex items-end justify-center">
-                      <div class="relative w-full h-[92%]">
-                        <div
-                          class="absolute bottom-0 left-[2%] w-[54%] rounded-lg overflow-hidden border border-amber-400/40 shadow-lg shadow-black/45 rotate-[11deg] opacity-[0.97] bg-surface-950 origin-bottom-left z-0"
-                        >
-                          <img
-                            src="/cardmarket/fezandipiti-ex-sir.png"
-                            :alt="t('hero.collageCardAlt2')"
-                            class="w-full aspect-[63/88] object-cover"
-                          />
-                        </div>
-                        <div
-                          class="absolute bottom-0 right-[0%] w-[58%] rounded-xl overflow-hidden border-2 border-amber-400/45 shadow-xl shadow-black/45 -rotate-[8deg] bg-surface-950 z-10"
-                        >
-                          <img
-                            src="/cardmarket/piplup-098-094.png"
-                            :alt="t('hero.collageCardAlt')"
-                            class="w-full aspect-[63/88] object-cover"
-                          />
-                        </div>
-                      </div>
+                    <div
+                      class="absolute bottom-6 sm:bottom-7 left-[6%] sm:left-[10%] w-[40%] max-w-[5.25rem] rounded-lg overflow-hidden border border-amber-400/45 shadow-lg shadow-black/45 rotate-[11deg] bg-surface-950 origin-bottom-left z-0"
+                    >
+                      <img
+                        src="/cardmarket/fezandipiti-ex-sir.png"
+                        :alt="t('hero.collageCardAlt2')"
+                        class="w-full aspect-[63/88] object-cover"
+                      />
+                    </div>
+                    <div
+                      class="relative z-10 translate-y-1 w-[46%] max-w-[6rem] sm:max-w-[6.5rem] rounded-xl overflow-hidden border-2 border-amber-400/45 shadow-xl shadow-black/45 -rotate-[8deg] bg-surface-950"
+                    >
+                      <img
+                        src="/cardmarket/piplup-098-094.png"
+                        :alt="t('hero.collageCardAlt')"
+                        class="w-full aspect-[63/88] object-cover"
+                      />
                     </div>
                   </div>
                   <p class="mt-2 text-[10px] uppercase tracking-wider text-cyan-500/90 font-semibold text-center">
@@ -168,8 +165,11 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
                   </p>
                 </div>
               </Transition>
-              <!-- Hueco cuando el panel Mimikyu oculta las cartas: mantiene alineación con la columna izquierda -->
-              <div v-if="printDetailOpen" class="w-full aspect-square rounded-2xl opacity-0 pointer-events-none" aria-hidden="true" />
+              <div
+                v-if="printDetailOpen"
+                class="min-h-[10rem] sm:min-h-[11rem] opacity-0 pointer-events-none shrink-0"
+                aria-hidden="true"
+              />
             </div>
           </div>
         </div>
@@ -247,7 +247,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
               >
                 <div class="relative pb-2">
                   <div
-                    class="absolute bottom-2 right-5 xl:right-6 w-[68%] rounded-lg overflow-hidden border border-amber-400/40 bg-surface-950 rotate-[12deg] scale-[0.92] opacity-[0.96] shadow-lg shadow-black/50 origin-bottom-right"
+                    class="absolute bottom-1 left-0 xl:-left-1 w-[82%] max-w-[11rem] rounded-lg overflow-hidden border-2 border-amber-400/55 bg-surface-950 rotate-[15deg] shadow-xl shadow-black/55 origin-bottom-left z-0"
                   >
                     <img
                       src="/cardmarket/fezandipiti-ex-sir.png"
@@ -256,7 +256,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
                     />
                   </div>
                   <div
-                    class="relative rounded-lg overflow-hidden border-2 border-amber-400/50 bg-surface-950 -rotate-11 shadow-xl shadow-black/50 translate-y-1"
+                    class="relative ml-auto w-[88%] rounded-lg overflow-hidden border-2 border-amber-400/50 bg-surface-950 -rotate-11 shadow-xl shadow-black/50 translate-y-1 z-10"
                   >
                     <img
                       src="/cardmarket/piplup-098-094.png"
